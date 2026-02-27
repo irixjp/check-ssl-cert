@@ -14,8 +14,8 @@
       - openai.com
       - example.com
       - www.cloudflare.com
+      - facebook.com
       - www.ft.com
-      - howsmyssl.com
       - expired.badssl.com
       - expired-rsa-dv.ssl.com
 
@@ -35,7 +35,19 @@
           'domain': item.item,
           'expires_at': '%Y-%m-%d %H:%M:%S GMT+9' | strftime((expires_epoch | int) + 32400),
           'days_left': days_left,
-          'emoji': ( '🚨' if (days_left | int) <= critical_days else ( '⚠️' if (days_left | int) <= warn_days else '🟢' ) )
+          'emoji': (
+            '☠️'
+            if (days_left | int) <= 0
+            else (
+              '🚨'
+              if (days_left | int) <= critical_days
+              else (
+                '⚠️'
+                if (days_left | int) <= warn_days
+                else '🟢'
+              )
+            )
+          )
         } ] }}"
       vars:
         expires_epoch: "{{ (item.not_after | to_datetime('%Y%m%d%H%M%SZ')).strftime('%s') | int }}"
@@ -59,7 +71,7 @@
 
           Created At: {{ '%Y-%m-%d %H:%M:%S GMT+9' | strftime((now(utc=true, fmt='%s') | int) + 32400) }}
           
-          Legend: 🟢 `> {{ warn_days }} days` / ⚠️ `{{ critical_days + 1 }}-{{ warn_days }} days` / 🚨 `<= {{ critical_days }} days`
+          Legend: 🟢 `> {{ warn_days }} days` / ⚠️ `{{ critical_days + 1 }}-{{ warn_days }} days` / 🚨 `1-{{ critical_days }} days` / ☠️ `<= 0 days`
 
           | Domain | Expiration (GMT+9) | Days Left | Status |
           |---|---|---:|:---:|

@@ -1,8 +1,8 @@
 # SSL Certificate Report (Sample)
 
-Created At: 2026-02-27 22:10:07 GMT+9
+Created At: 2026-02-27 22:47:20 GMT+9
 
-Legend: 🟢 `> 30 days` / ⚠️ `11-30 days` / 🚨 `<= 10 days`
+Legend: 🟢 `> 30 days` / ⚠️ `11-30 days` / 🚨 `1-10 days` / ☠️ `<= 0 days`
 
 | Domain | Expiration (GMT+9) | Days Left | Status |
 |---|---|---:|:---:|
@@ -12,7 +12,7 @@ Legend: 🟢 `> 30 days` / ⚠️ `11-30 days` / 🚨 `<= 10 days`
 | openai.com | 2026-04-23 12:58:41 GMT+9 | 54 | 🟢 |
 | example.com | 2026-05-15 03:57:50 GMT+9 | 76 | 🟢 |
 | www.cloudflare.com | 2026-05-20 05:10:11 GMT+9 | 81 | 🟢 |
-| www.ft.com | 2026-03-20 22:18:22 GMT+9 | 21 | ⚠️ |
-| howsmyssl.com | 2026-03-22 04:07:44 GMT+9 | 22 | ⚠️ |
-| expired.badssl.com | 2015-04-13 08:59:59 GMT+9 | -3974 | 🚨 |
-| expired-rsa-dv.ssl.com | 2016-08-03 05:48:30 GMT+9 | -3496 | 🚨 |
+| facebook.com | 2026-03-07 08:59:59 GMT+9 | 7 | 🚨 |
+| www.ft.com | 2026-03-20 22:18:22 GMT+9 | 20 | ⚠️ |
+| expired.badssl.com | 2015-04-13 08:59:59 GMT+9 | -3974 | ☠️ |
+| expired-rsa-dv.ssl.com | 2016-08-03 05:48:30 GMT+9 | -3496 | ☠️ |
